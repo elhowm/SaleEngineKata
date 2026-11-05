@@ -1,0 +1,6 @@
+[
+  { "code": "FR", "name": "Fruit Tea", "price_cents": 311 },
+  { "code": "SR", "name": "Strawberries", "price_cents": 500 },
+  { "code": "CF", "name": "Coffee", "price_cents": 1123 },
+  { "code": "AJ", "name": "Apple Juice", "price_cents": 725 }
+]
