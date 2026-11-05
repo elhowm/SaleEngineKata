@@ -102,7 +102,7 @@ SR SR FR FR SR CF
 ```text
 Positions:
 - Strawberries x3 | $15.00 - $1.50 (promo)
-- Fruit Tea x2 | $6.22 - 3.11 (promo)
+- Fruit Tea x2 | $6.22 - $3.11 (promo)
 - Coffee x1 | $11.23
 Promos applied:
 - Strawberries x3 or more for $4.50.
