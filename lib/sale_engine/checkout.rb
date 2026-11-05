@@ -2,6 +2,8 @@
 
 module SaleEngine
   class Checkout
+    attr_reader :cart
+
     def initialize(*promos, catalog: Products::Catalog.new)
       @promos = promos
       @catalog = catalog

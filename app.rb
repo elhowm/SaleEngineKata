@@ -2,6 +2,7 @@
 
 require "bundler/setup"
 require_relative "lib/sale_engine"
+require_relative "checkout_formatter"
 
 promos = [
   SaleEngine::Promos::BuyOneGetOneFree.new("FR"),
@@ -13,4 +14,4 @@ input = $stdin.gets.to_s
 codes = input.split
 codes.each { |code| checkout.scan(code) }
 
-puts "Total: #{checkout.total.format}"
+puts CheckoutFormatter.format(checkout)
