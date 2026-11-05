@@ -2,7 +2,8 @@
 
 module SaleEngine
   class CartLine
-    attr_reader :product, :quantity, :promos
+    attr_reader :product
+    attr_accessor :quantity, :promos
 
     def initialize(product:, quantity:, promos: [])
       @product = product

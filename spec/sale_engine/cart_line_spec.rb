@@ -20,6 +20,13 @@ RSpec.describe SaleEngine::CartLine do
     it "has no promos by default" do
       expect(described_class.new(product: fruit_tea, quantity: 1).promos).to eq([])
     end
+
+    it "allows changing quantity and promos" do
+      cart_line.quantity = 4
+      cart_line.promos = []
+
+      expect(cart_line).to have_attributes(quantity: 4, promos: [])
+    end
   end
 
   context "without promos" do
