@@ -36,10 +36,10 @@ bundle exec rspec
 ## Design/Architecture - Discounts
 
 A grocery store sells the following products:
-• Fruit Tea (FR) - $3.11
-• Strawberries (SR) - $5.00
-• Coffee (CF) - $11.23
-• Apple Juice (AJ) - $7.25
+- Fruit Tea (FR) - $3.11
+- Strawberries (SR) - $5.00
+- Coffee (CF) - $11.23
+- Apple Juice (AJ) - $7.25
 ​
 The marketing team is pushing hard to come up with new offers. So far, we have the following
 rules:
