@@ -1,5 +1,38 @@
 # Sale engine kata
 
+## Usage
+
+1. Requires Ruby 4.0.9 installed. (`mise install` if you use mise).
+
+2. Install the gems
+
+```bash
+bundle install
+```
+
+3. Run the app and enter product codes separated by spaces
+
+```text
+$ ruby app.rb
+Enter product codes separated by spaces (e.g. FR SR CF):
+FR SR FR FR CF
+Positions:
+- Fruit Tea x3 | $9.33 - $3.11 (promo)
+- Strawberries x1 | $5.00
+- Coffee x1 | $11.23
+Promos applied:
+- Fruit Tea: buy one, get one free.
+Total: $22.45
+```
+
+Unknown codes are skipped. Product codes and prices are in `config/products.json`.
+
+Run the specs:
+
+```bash
+bundle exec rspec
+```
+
 ## Design/Architecture - Discounts
 
 A grocery store sells the following products:

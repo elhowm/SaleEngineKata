@@ -10,6 +10,7 @@ promos = [
 ]
 checkout = SaleEngine::Checkout.new(*promos)
 
+puts "Enter product codes separated by spaces (e.g. FR SR CF):"
 input = $stdin.gets.to_s
 codes = input.split
 codes.each { |code| checkout.scan(code) }
