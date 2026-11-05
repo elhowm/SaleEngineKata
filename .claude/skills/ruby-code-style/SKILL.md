@@ -91,3 +91,64 @@ describe "#discount" do
   end
 end
 ```
+
+## Data.define only for plain values
+
+Use `Data.define` for simple value objects that only hold attributes (e.g. `Product`). Once a type
+has logic (calculations, conditions), write a regular class with `attr_reader`s instead.
+
+Bad: a Data type carrying behaviour:
+
+```ruby
+CartLine = Data.define(:product, :quantity, :promos) do
+  def price
+    product.price * quantity
+  end
+
+  def total
+    price - discount
+  end
+end
+```
+
+Good: a plain value as Data, a type with logic as a class:
+
+```ruby
+Product = Data.define(:code, :name, :price)
+
+class CartLine
+  attr_reader :product, :quantity, :promos
+
+  def initialize(product:, quantity:, promos: [])
+    @product = product
+    @quantity = quantity
+    @promos = promos
+  end
+
+  def price
+    product.price * quantity
+  end
+end
+```
+
+## No comments on self-descriptive code
+
+Don't write comments that repeat what well-named code already says. Add a comment only for
+something the code can't show, such as a non-obvious reason or constraint.
+
+Bad:
+
+```ruby
+# full price of the line
+def price
+  product.price * quantity
+end
+```
+
+Good:
+
+```ruby
+def price
+  product.price * quantity
+end
+```
