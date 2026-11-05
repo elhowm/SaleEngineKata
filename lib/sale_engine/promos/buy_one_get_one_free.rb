@@ -2,7 +2,6 @@
 
 module SaleEngine
   module Promos
-    # Every second item of the product is free.
     class BuyOneGetOneFree
       attr_reader :product_code
 

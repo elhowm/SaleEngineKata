@@ -4,7 +4,6 @@ require "json"
 
 module SaleEngine
   module Products
-    # Products available in the store, loaded from a JSON file.
     class Catalog
       DEFAULT_PATH = File.expand_path("../../../config/products.json", __dir__)
 

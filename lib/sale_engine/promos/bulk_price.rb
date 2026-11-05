@@ -2,7 +2,6 @@
 
 module SaleEngine
   module Promos
-    # Buying threshold_quantity or more drops the price of each item to promo_price.
     class BulkPrice
       attr_reader :product_code, :threshold_quantity, :promo_price
 

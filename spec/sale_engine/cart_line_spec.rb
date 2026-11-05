@@ -2,13 +2,8 @@
 
 RSpec.describe SaleEngine::CartLine do
   let(:fruit_tea) { SaleEngine::Product.new(code: "FR", name: "Fruit Tea", price: Money.from_cents(311)) }
-  let(:strawberries) { SaleEngine::Product.new(code: "SR", name: "Strawberries", price: Money.from_cents(500)) }
   let(:coffee) { SaleEngine::Product.new(code: "CF", name: "Coffee", price: Money.from_cents(1123)) }
-
   let(:buy_one_get_one_free) { SaleEngine::Promos::BuyOneGetOneFree.new("FR") }
-  let(:bulk_price) do
-    SaleEngine::Promos::BulkPrice.new("SR", threshold_quantity: 3, promo_price: Money.from_cents(450))
-  end
 
   describe "attributes" do
     subject(:cart_line) { described_class.new(product: fruit_tea, quantity: 3, promos: [buy_one_get_one_free]) }
@@ -63,6 +58,11 @@ RSpec.describe SaleEngine::CartLine do
 
   context "with bulk price" do
     subject(:cart_line) { described_class.new(product: strawberries, quantity: 3, promos: [bulk_price]) }
+
+    let(:strawberries) { SaleEngine::Product.new(code: "SR", name: "Strawberries", price: Money.from_cents(500)) }
+    let(:bulk_price) do
+      SaleEngine::Promos::BulkPrice.new("SR", threshold_quantity: 3, promo_price: Money.from_cents(450))
+    end
 
     it "discounts the price difference for each item" do
       expect(cart_line.discount).to eq(Money.from_cents(150, "USD"))
